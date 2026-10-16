@@ -1,4 +1,13 @@
 <resources>
+    //REGISTRO
+    <string name="titulo_registro">Biemvenido</string>
+    <string name="volver">Volver a pantalla anterior</string>
+    <string name="hint_confirm_password">Introduce de nuevo la contraseña</string>
+    <string name="acepto_terminos">Acepto los términos y condiciones</string>
+    <string name="boton_crear_cuenta">Crear cuenta</string>
+    <string name="ya_tienes_cuenta">Ya tengo cuenta</string>
+
+    //LOGIN
     <string name="app_name">MiApp</string>
 
     <string name="logo_desc">Logo de la aplicación</string>
@@ -18,5 +27,16 @@
 
     <string name="login_correcto">Login correcto</string>
     <string name="titulo_home">¡Bienvenido a Home!</string>
+
+    //HOME
+    <string name="home_bienvenida">¡Bienvenido, %1$s!</string>
+    <string name="home_sin_email">¡Bienvenido!</string>
+    <string name="menu_acerca_de">Acerca de</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
+    <string name="dialog_acerca_titulo">Acerca de</string>
+    <string name="dialog_acerca_texto">MiApp v1.0\nDesarrollada por 2º DAM\nProgramación Multimedia y Dispositivos Móviles</string>
+    <string name="dialog_aceptar">Aceptar</string>
+    <string name="dialog_cancelar">Cancelar</string>
+    <string name="abrir_menu">Abrir menú</string>
 
 </resources>

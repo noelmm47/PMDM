@@ -29,7 +29,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun LoginScreen(
-    onLoginSuccess: () -> Unit //???
+    onLoginSuccess: (String) -> Unit,
+    onGoToRegister: () -> Unit
 ) {
     var email by remember { mutableStateOf("") }
     var emailError by remember { mutableStateOf<String?>(null) }
@@ -238,7 +239,7 @@ fun LoginScreen(
                 onClick = {
                     if (validarEmail() && validarPassword()) {
                         focusManager.clearFocus()
-                        onLoginSuccess()
+                        onLoginSuccess(email.trim())
                     }
                 },
                 enabled = enterButtonAbled,
@@ -256,6 +257,12 @@ fun LoginScreen(
 
                 }
             }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            TextButton(onClick = onGoToRegister) {
+                Text(stringResource(R.string.ya_tienes_cuenta))
+            }
         }
 
     }
@@ -265,6 +272,6 @@ fun LoginScreen(
 @Composable
 fun LoginScreenPreview() {
     MaterialTheme {
-        LoginScreen(onLoginSuccess = {})
+        LoginScreen(onLoginSuccess = { _ -> }, onGoToRegister = {}) //Funciones vacías
     }
 }
