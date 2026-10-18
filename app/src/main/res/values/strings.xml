@@ -1,6 +1,6 @@
 <resources>
     //REGISTRO
-    <string name="titulo_registro">Biemvenido</string>
+    <string name="titulo_registro">Bienvenido</string>
     <string name="volver">Volver a pantalla anterior</string>
     <string name="hint_confirm_password">Introduce de nuevo la contraseña</string>
     <string name="acepto_terminos">Acepto los términos y condiciones</string>

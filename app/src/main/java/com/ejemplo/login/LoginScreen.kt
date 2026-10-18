@@ -235,14 +235,15 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         Column(verticalArrangement = Arrangement.spacedBy(0.dp)){
-            Button( // El botón "Entrar"
+            Button(
                 onClick = {
-                    if (validarEmail() && validarPassword()) {
+                    val emailOk = validarEmail()
+                    val passOk = validarPassword()
+                    if (emailOk && passOk) {
                         focusManager.clearFocus()
-                        onLoginSuccess(email.trim())
+                        onLoginSuccess(email.trim())   // Pasamos el email
                     }
                 },
-                enabled = enterButtonAbled,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(stringResource(R.string.boton_entrar))
@@ -254,17 +255,14 @@ fun LoginScreen(
                     onClick = { /* Acción */ }
                 ) { //Botón "Olvidaste tu contraseña"
                     Text(stringResource(R.string.olvidaste_password))
-
                 }
             }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            TextButton(onClick = onGoToRegister) {
-                Text(stringResource(R.string.ya_tienes_cuenta))
-            }
         }
+        Spacer(modifier = Modifier.height(16.dp))
 
+        TextButton(onClick = onGoToRegister) {
+            Text(stringResource(R.string.ya_tienes_cuenta))
+        }
     }
 }
 
@@ -272,6 +270,6 @@ fun LoginScreen(
 @Composable
 fun LoginScreenPreview() {
     MaterialTheme {
-        LoginScreen(onLoginSuccess = { _ -> }, onGoToRegister = {}) //Funciones vacías
+        LoginScreen(onLoginSuccess = { _ -> }, onGoToRegister = {})
     }
 }

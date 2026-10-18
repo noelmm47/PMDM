@@ -20,6 +20,7 @@ fun HomeScreen(
     userEmail: String,
     onLogout: () -> Unit
 ) {
+    val innerPadding by remember { mutableStateOf(24.dp)}
     // ---------------------------------------------------------
     // ESTADO: controla el menú overflow y el diálogo
     // ---------------------------------------------------------
@@ -62,7 +63,7 @@ fun HomeScreen(
                 }
             )
         }
-    ) { innerPadding ->
+    ) { innerPadding -> //¿qué valor tiene y cómo lo sabe? No está declarado en ningún sitio
         Column(
             modifier = Modifier
                 .fillMaxSize()

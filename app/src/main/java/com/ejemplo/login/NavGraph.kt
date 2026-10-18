@@ -14,7 +14,7 @@ import androidx.navigation.navArgument
 object Routes {
     const val LOGIN = "login"
     const val REGISTER = "register"
-    const val HOME = "home/{email}"
+    const val HOME = "home/{email}" //email es sustituible por un parámetro
 
     fun home(email: String): String = "home/${Uri.encode(email)}"
 }
@@ -59,7 +59,7 @@ fun AppNavGraph() {
         // --- HOME (con argumento email) ---
         composable(
             route = Routes.HOME,
-            arguments = listOf(
+            arguments = listOf( //¿por qué no usa directamente la función home(email: String): String?
                 navArgument("email") {
                     type = NavType.StringType
                     defaultValue = ""

@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterScreen(
+fun RegisterScreen( //recibe funciones
     onRegisterSuccess: (String) -> Unit,   // Recibe el email para pasarlo a Home
     onBackToLogin: () -> Unit
 ) {
