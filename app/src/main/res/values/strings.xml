@@ -39,5 +39,7 @@
     <string name="dialog_aceptar">Aceptar</string>
     <string name="dialog_cancelar">Cancelar</string>
     <string name="abrir_menu">Abrir menú</string>
+    <string name="dialog_logout_titulo">Cerrar Sesión</string>
+    <string name="dialog_logout_texto">¿Está seguro/a de que quiere cerrar sesión?</string>
 
 </resources>

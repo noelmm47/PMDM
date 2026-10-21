@@ -26,6 +26,7 @@ fun HomeScreen(
     // ---------------------------------------------------------
     var menuExpanded by remember { mutableStateOf(false) }
     var showAboutDialog by remember { mutableStateOf(false) }
+    var confirmLogout by remember {mutableStateOf(false)}
 
     Scaffold(
         topBar = {
@@ -56,7 +57,7 @@ fun HomeScreen(
                             text = { Text(stringResource(R.string.menu_cerrar_sesion)) },
                             onClick = {
                                 menuExpanded = false
-                                onLogout()
+                                confirmLogout= true
                             }
                         )
                     }
@@ -99,6 +100,27 @@ fun HomeScreen(
             confirmButton = {
                 TextButton(onClick = { showAboutDialog = false }) {
                     Text(stringResource(R.string.dialog_aceptar))
+                }
+            }
+        )
+    }
+
+    // ---------------------------------------------------------
+    // DIÁLOGO "Confirmar cerrar sesión"
+    // ---------------------------------------------------------
+    if(confirmLogout){
+        AlertDialog(
+            onDismissRequest = { confirmLogout = false },
+            title = { Text(stringResource(R.string.dialog_logout_titulo)) },
+            text = { Text(stringResource(R.string.dialog_logout_texto)) },
+            confirmButton = {
+                TextButton(onClick = { confirmLogout = false; onLogout(); }) {
+                    Text(stringResource(R.string.dialog_aceptar))
+                }
+            },
+            dismissButton= {
+                TextButton(onClick = { confirmLogout = false }) {
+                    Text(stringResource(R.string.dialog_cancelar))
                 }
             }
         )
