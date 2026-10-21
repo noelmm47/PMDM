@@ -1,6 +1,6 @@
 <resources>
     //REGISTRO
-    <string name="titulo_registro">Bienvenido</string>
+    <string name="titulo_registro">Crear Cuenta</string>
     <string name="volver">Volver a pantalla anterior</string>
     <string name="hint_confirm_password">Introduce de nuevo la contraseña</string>
     <string name="acepto_terminos">Acepto los términos y condiciones</string>
@@ -23,6 +23,7 @@
     <string name="boton_entrar">ENTRAR</string>
     <string name="olvidaste_password">¿Olvidaste tu contraseña?</string>
     <string name="toggle_password">Mostrar u ocultar contraseña</string>
+    <string name="sin_cuenta">¿No tienes cuenta? ¡Regístrate!</string>
 
 
     <string name="login_correcto">Login correcto</string>

@@ -261,7 +261,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         TextButton(onClick = onGoToRegister) {
-            Text(stringResource(R.string.ya_tienes_cuenta))
+            Text(stringResource(R.string.sin_cuenta))
         }
     }
 }
