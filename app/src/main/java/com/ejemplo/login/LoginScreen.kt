@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun LoginScreen(
-    onLoginSuccess: (String) -> Unit,
+    onLoginSuccess: (String, Boolean) -> Unit,   // email + remember
     onGoToRegister: () -> Unit
 ) {
     var email by remember { mutableStateOf("") }
@@ -241,7 +241,7 @@ fun LoginScreen(
                     val passOk = validarPassword()
                     if (emailOk && passOk) {
                         focusManager.clearFocus()
-                        onLoginSuccess(email.trim())   // Pasamos el email
+                        onLoginSuccess(email.trim(), rememberSession)
                     }
                 },
                 modifier = Modifier.fillMaxWidth()
@@ -270,6 +270,6 @@ fun LoginScreen(
 @Composable
 fun LoginScreenPreview() {
     MaterialTheme {
-        LoginScreen(onLoginSuccess = { _ -> }, onGoToRegister = {})
+        LoginScreen(onLoginSuccess = { _, _ -> }, onGoToRegister = {})
     }
 }
