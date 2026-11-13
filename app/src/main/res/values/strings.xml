@@ -61,7 +61,7 @@
     <string name="boton_borrar">Borrar</string>
     <string name="cd_borrar_juego">Borrar videojuego</string>
     <string name="cd_marcar_completado">Marcar como completado</string>
-    <string name="error_titulo_vacio">El título no puede estar vacío</string>
+    <string name="error_titulo_vacio">El título no puede estar vacíooo</string>
     <string name="error_anyo_invalido">Introduce un año válido</string>
     <string name="error_nota_invalida">La nota debe estar entre 0 y 10</string>
 

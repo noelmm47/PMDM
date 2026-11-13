@@ -340,6 +340,10 @@ private fun VideojuegoFormDialog(
 ) {
     val esEdicion = videojuegoInicial != null
 
+    val tituloWarning = stringResource(R.string.error_titulo_vacio);
+    val anyoWarning = stringResource(R.string.error_anyo_invalido);
+    val notaWarning = stringResource(R.string.error_nota_invalida);
+
     var titulo by remember { mutableStateOf(videojuegoInicial?.titulo ?: "") }
     var plataforma by remember { mutableStateOf(videojuegoInicial?.plataforma ?: "") }
     var genero by remember { mutableStateOf(videojuegoInicial?.genero ?: "") }
@@ -433,15 +437,15 @@ private fun VideojuegoFormDialog(
             TextButton(onClick = {
                 // Validaciones
                 val tituloOk = titulo.isNotBlank()
-                tituloError = if (!tituloOk) "El título no puede estar vacío" else null
+                tituloError = if (!tituloOk) tituloWarning else null
 
                 val anyoInt = anyo.toIntOrNull()
                 val anyoOk = anyoInt != null && anyoInt in 1950..2100
-                anyoError = if (!anyoOk) "Introduce un año válido" else null
+                anyoError = if (!anyoOk) anyoWarning else null
 
                 val notaFloat = nota.replace(',', '.').toFloatOrNull()
                 val notaOk = notaFloat != null && notaFloat in 0f..10f
-                notaError = if (!notaOk) "La nota debe estar entre 0 y 10" else null
+                notaError = if (!notaOk) notaWarning else null
 
                 if (tituloOk && anyoOk && notaOk) {
                     onSave(
